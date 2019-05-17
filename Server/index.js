@@ -7,4 +7,8 @@ const app = express()
 
 app.use(express.json())
 
+massive(CONNECTION_STRING).then((database) => {
+  app.set('db',database)
+  console.log('database connected')
   app.listen(SERVER_PORT , () => console.log(`Success! Server running at Port:${SERVER_PORT}`))
+})

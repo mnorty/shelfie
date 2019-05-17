@@ -34,6 +34,18 @@ class Form extends Component {
     })
   }
 
+  handleAddProduct = () => {
+    console.log(this.state)
+    axios.post('http://localhost:5656/api/products' , {
+      name:this.state.name,
+      img:this.state.img,
+      price:this.state.price
+    })
+    .then((res) => {
+      console.log(res)
+    })
+  }
+
   render(){
     return(
     <div>
@@ -43,7 +55,7 @@ class Form extends Component {
         <input type="text" value={this.state.price} onChange={e => this.handlePrice(e.target.value)}/>
         <div className="ButtonBox">
           <button onClick={_ => this.clearInputs()}>Cancel</button>
-          <button>Add to Inventory</button>
+          <button onClick={this.handleAddProduct}>Add to Inventory</button>
         </div>
       </div>
     </div>

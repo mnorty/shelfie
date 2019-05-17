@@ -2,10 +2,15 @@ import React,{Component} from 'react'
 import axios from 'axios'
 
 export default function Product(props){
-  let {name,price,img} = props.item
+  let {name,img,price} = props.item
 
   return(
-  <div>{this.props.name}</div>
+    <div className='Product'>
+    <img src={img} alt='Picture'></img>
+    <div>
+      <p>{name}</p>
+      <p>{price}</p>
+    </div>
+  </div>
   )
-
 }

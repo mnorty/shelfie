@@ -3,15 +3,13 @@ import axios from 'axios'
 import Product from '../Product/Product';
 
 class Dashboard extends Component {
-  // constructor(){
-
-  // }
   render(){
+    // console.log(this.state.props)
     return(
       <div>
-      {/* {this.props.inventory.map((el)=> {
+      {this.props.inventory.map((el)=> {
         return <Product key={el.id} item={el} />
-      })} */}
+      })}
       </div>
     )
   }

@@ -10,6 +10,7 @@ export default function Product(props){
     <div>
       <p>{name}</p>
       <p>{price}</p>
+      <button>delete</button>
     </div>
   </div>
   )

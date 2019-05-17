@@ -1,15 +1,11 @@
 import React,{Component} from 'react'
 import axios from 'axios'
 
-class Product extends Component {
-  // constructor(){
+export default function Product(props){
+  let {name,price,img} = props.item
 
-  // }
-  render(){
-    return(
-    <div>Product</div>
-    )
-  }
+  return(
+  <div>{this.props.name}</div>
+  )
+
 }
-
-export default Product

@@ -5,7 +5,7 @@ module.exports = {
     dbInstance.get_Inventory()
       .then( products => res.status(200).send( products ) )
       .catch( err => {
-        res.status(500).send({errorMessage: "Oops! Something went wrong. Our engineers have been informed!"});
+        res.status(500).send({errorMessage: "Oops that didn't work"});
         console.log(err)
       } )
   },
@@ -17,7 +17,7 @@ module.exports = {
     dbInstance.add_inventory([name,price,img])
     .then( () => res.sendStatus(200) )
     .catch( err => {
-      res.status(500).send({errorMessage: "Oops! Something went wrong. Our engineers have been informed!"});
+      res.status(500).send({errorMessage: "Oops that didn't work"});
       console.log(err)
     } )
   },
@@ -29,7 +29,7 @@ module.exports = {
     dbInstance.delete_item(id)
     .then( () => res.sendStatus(200))
     .catch( err => {
-      res.status(500).send({errorMessage: "Oops! Something went wrong. Our engineers have been informed!"});
+      res.status(500).send({errorMessage: "Oops that didn't work"});
       console.log(err)
     } );
   }

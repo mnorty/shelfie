@@ -19,9 +19,9 @@ class App extends Component {
     this.getInventory()
   }
 
-  // componentDidUpdate(){
-  //   this.getInventory()
-  // }
+  componentDidUpdate(){
+    this.getInventory()
+  }
 
   getInventory(){
     axios.get('http://localhost:5656/api/products')

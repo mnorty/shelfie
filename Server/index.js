@@ -17,3 +17,4 @@ massive(CONNECTION_STRING).then((database) => {
 })
 
 app.get('/api/products', controller.getAll)
+app.post('/api/products', controller.addProduct)

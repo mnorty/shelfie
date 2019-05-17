@@ -16,5 +16,6 @@ massive(CONNECTION_STRING).then((database) => {
   app.listen(SERVER_PORT , () => console.log(`Success! Server running at Port:${SERVER_PORT}`))
 })
 
-app.get('/api/products', controller.getAll)
-app.post('/api/products', controller.addProduct)
+app.get('/api/products', controller.getAll);
+app.post('/api/products', controller.addProduct);
+app.delete('/api/product/:id' , controller.deleteProduct)

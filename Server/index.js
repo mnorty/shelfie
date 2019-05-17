@@ -12,3 +12,5 @@ massive(CONNECTION_STRING).then((database) => {
   console.log('database connected')
   app.listen(SERVER_PORT , () => console.log(`Success! Server running at Port:${SERVER_PORT}`))
 })
+
+app.get('/api/inventory', controller.getInventory)

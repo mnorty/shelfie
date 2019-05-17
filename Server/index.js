@@ -4,8 +4,11 @@ const massive = require('massive');
 const controller = require('./controller')
 const {SERVER_PORT,CONNECTION_STRING}= process.env
 const app = express()
+const cors = require('cors')
 
 app.use(express.json())
+
+app.use(cors())
 
 massive(CONNECTION_STRING).then((database) => {
   app.set('db',database)

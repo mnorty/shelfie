@@ -3,7 +3,7 @@ import Dashboard from './Components/Dashboard/Dashboard'
 import Form from './Components/Form/Form'
 import Header from './Components/Header/Header'
 import './App.css';
-import Axios from 'axios';
+import axios from 'axios';
 
 // let products = [
 //   {name: 'Hammer',
@@ -26,16 +26,23 @@ class App extends Component {
     this.state = {
       products: []
     }
-    console.log(products)
+    this.getInventory = this.getInventory.bind(this)
+    console.log(this.state.products)
   }
 
   componentDidMount() {
     this.getInventory()
   }
 
-  getInventory = () => {
-    Axios.get('/api/products')
-    .then(res => this.setState({products: res.data}))
+  getInventory(){
+    axios.get('http://localhost:5656/api/products')
+
+    .then(res => {
+      this.setState({
+        products: res.data
+        })
+      })
+    
   }
 
 
